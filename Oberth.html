@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Karim Elyoussef Portfolio Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav (top fixed navigation bar) -->
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html" class=active><b>Back to Home Page</b></a></li>
+				</ul>
+			</nav>
+
+        <!-- Wrapper (this gives a border to everything) -->
+            <div id="wrapper">
+                    
+                <!-- Header -->
+		    	    <header id="header" class="alt">
+                        <span class="logo"><img src="images/logo.svg" alt="" /></span>
+                        <h1>Oberth Rocketry Project</h1>
+					    <p>
+                            The Oberth or Transonic level of the Systems Go curriculum, students are tasked with breaking the sounds barrier while 
+                            remaining under 13,000 feet with a given budget of 900 dollars. Below is a link to the post mission analysis. 
+					    </p>
+                        <ul class="major">
+                            <a href="https://github.com/Kelyoussef/Oberth-Rocket-PMA/blob/main/Transonic%20PMA%20(1).pdf" 
+                                class="button">Oberth Rocket Post Mission Analysis</a>
+                        </ul>
+				    </header>
+
+                <!-- Main -->
+					<div id="main">
+
+						<!-- Oberth -->
+							<section id="Oberth" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>My Role</b></h2>
+										</header>
+										<p>
+											My roles for this project matched that of my previous year again being the avionics lead and 
+											lead engineer of the project. As the avionics lead I chose and programmed the electroincs 
+											(e.g. altimeters, GPSs), designed and constructed the electronics bay, and completed any 
+											necessary testing (e.g. vacuum chambers, battery life). As the Lead Engineer my roles included
+											all those of the previous year, but expand into making the final decisions on the structural
+											components of the rocket, as weight, length, and diamter had a greater importance in the 
+											design of this rocket. In the following sections I have detailed some of the major component which I designed. 
+										</p>
+									</div>
+								</div>
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>Mathmatical Model</b></h2>
+										</header>
+										<p>
+											At the begining of the year to help in our design we built a mathmatical model to simulate
+											the flight of a rocket with an given parameter. Below are some key variable parameters and 
+											assumptions that were made in the model.
+										</p>
+										<p>
+											<li>
+												Linearly decreasing Mass: By dividing the propellant mass by the flow rate I am able to model
+												the average amount of propellant that burns away for any given time interval.
+											</li>
+											<li>
+												Variable Drag Coefficient: Using programs such as RASAero I was able to input the rocket parameters
+												and receive the drag coefficient for any given speed (in mach) and if the engine is on or off. The less
+												detailed solution would be to use a constant drag coefficient just based on the shape of the rocket. 
+											</li>
+											<li>
+												Parachute Expansion: While assuming instant expansion during any parachute deployments reduced complexity 
+												it increases inaccuracies in drag and other subsequent values. 
+											</li>
+											<li>
+												Thrust Data: For this project we purchased a L550 motor from Hypertek which came with a thrust curve as a
+												varaible of time that I incorporated into my model. Another less detailed method of incorporating thrust into
+												the model us have a constant thrust equal to the average of the choosen motor (550N for our choosen motor).
+											</li>
+										</p>			
+										<ul class="major">
+											<a href="https://github.com/Kelyoussef/Oberth-Rocket-Math-Model/blob/main/Transonic%20Math%20Model%20(1).xlsx" 
+												class="button">Oberth Math Model</a>
+										</ul>
+									</div>
+								</div>
+							</section>
+
+                    </div>
+
+				<!-- Footer -->
+				<footer id="footer"></footer>
+
+            </div>
+
+            <!-- Scripts -->
+                <script src="assets/js/jquery.min.js"></script>
+                <script src="assets/js/jquery.scrollex.min.js"></script>
+                <script src="assets/js/jquery.scrolly.min.js"></script>
+                <script src="assets/js/browser.min.js"></script>
+                <script src="assets/js/breakpoints.min.js"></script>
+                <script src="assets/js/util.js"></script>
+                <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
