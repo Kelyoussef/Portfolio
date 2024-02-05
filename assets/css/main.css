@@ -3970,15 +3970,16 @@ input, select, textarea {
 		justify-content: center;
 		align-items: center;
 	}
-		
+	
 	.MiniBoxContainer {
 		display: flex;
 		justify-content: space-between;
 		max-width: 900px; /* Adjust the max-width as needed */
 	}
-		
+	
 	.MiniBox {
-		width: calc(40% - 2em); /* Adjust the width as needed */
+		width: calc(40% - 2em); /* Adjust the width as needed for the desired number of MiniBoxes */
+		max-width: 325px; /* Set a maximum width to ensure consistency */
 		height: 670px;
 		background-color: #ffffff;
 		color: #636363;
@@ -3989,37 +3990,38 @@ input, select, textarea {
 		box-sizing: border-box;
 		cursor: pointer;
 	}
-		
+	
 	.MiniBox:hover {
 		background-color: rgba(222, 222, 222, 0.25);
 	}
-		
+	
 	.MiniBox img {
 		max-width: 100%;
 		height: auto;
 		border-radius: 0.5em;
+		margin-top: .4em;
 	}
-		
+	
 	.MiniBoxDescription {
-		margin-top: 1em;
+		margin-top: .4em;
 		text-align: left;
 	}
-		
+	
 	/* Open link in a new tab */
 	.MiniBox a {
 		text-decoration: none;
 		color: inherit;
 	}
-
+	
 	/* Media queries for responsiveness */
 	@media screen and (max-width: 768px) {
 		#MiniMain {
-			flex-direction: column;
+		flex-direction: column;
 		}
-
+	
 		.MiniBox {
-			width: 100%;
-			margin: 0 0 1em 0;
+		width: 100%;
+		margin: 0 0 1em 0;
 		}
 	}
 
