@@ -41,21 +41,64 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>Simulation and Analysis</h2>
+											<h2><b>Simulation and Analysis</b></h2>
 										</header>
 										<p>
 											One of my roles was to assist in the simulation and analysis of the wing, which was completed in Creo Parameteric 10. 
 											This consisted of running programs of different wing shapes and internal structures and comparing results to figure 
 											out which is the best for our given requirements. 
-										</p>
 									</div>
-									<span class="imagesquare"><img src="images/" alt="" /></span> 
 								</div>
-
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>CNC/Manual Milling Operations</h2>
+											<h2>Non-Linear Taper</h2>
+										</header>
+										<p>
+											A non-linear taper made of three cross-sections (placed at the ends and center) was used to create the I-beam tall in the center 
+											increasing its moment of inertia and in return decreasing stree in the center while also allowing the team to use a thinner 
+											material, lightening the beam. This was further proved in our simulations which showed that stress were well-spread throughout the 
+											entire length of the beam. The skin stresses across the beam generally remained between 50 and 59 ksi, which is comfortably in the 
+											bounds of the yield stress of 7075 aluminum.
+										</p>
+									</div>
+									<span class="imagesquare"><img src="images/Beam_Taper.png" alt="" /></span>
+								</div>
+								<span class="imagesquare"><img src="images/Beam_Stress_Analysis.png" alt="" /></span>
+								<br></br>
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Web Design</h2>
+										</header>
+										<p>
+											To help lighten the beam a pattern of circles and triangular trusses were used in the web of the beam. The triangular trusses were used 
+											on the thicker end and keep going until they became small enough to match the minmum radii of the avaible tools (1/8), from then on circles 
+											were used. This pattern was choosen for the high strength-to-weight ratio allowing the beam to hold the 90lbs while being as light as possible.
+										</p>
+									</div>
+									<span class="imagesquare"><img src="images/Beam_Web_Pattern.png" alt="" /></span>
+								</div>
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Deflection</h2>
+										</header>
+										<p>
+											During the design of the beam we decided to trade off deflection for weight, but made an effort to stay under a simulated deflection of 4 inches. 
+											With a final simulated value of 3.9 inches we decided it was reasonable as our models did not included the skin which will help drastically in reducing 
+											deflection.
+										</p>
+									</div>
+								</div>
+								<span class="imagesquare"><img src="images/Beam_Deflection.png" alt="" /></span>
+								<br></br>
+								<br></br>
+								
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>Milling Operations</b></h2>
 										</header>
 										<p>
 											Another one of my roles consisted of generating the GCode needed to run the CNC mill, which I completed in Creo Parametric 10 and the 
@@ -70,6 +113,9 @@
 								</div>
 								<div class="spotlight">
 									<div class="content">
+										<header class="major">
+											<h2>CNC Milling</h2>
+										</header>
 										<p>
 											Due to the beam having a tapered cross section a traditional clamp can not be used, to resolve this issue screw holes were pre-drilled 
 											in the stock allowing it to be directly connected to the surface in the mill. This is (partially) visible in the right photo where 
@@ -82,6 +128,9 @@
 								</div>
 								<div class="spotlight">
 									<div class="content">
+										<header class="major">
+											<h2>Manual Milling</h2>
+										</header>
 										<p>
 											The final step in the manufacturing of the wing was to manually mill everything that the CNC mill could not get, this included 
 											the fixture used to hold the beam during testing, parts of the web which are smaller than 1/8" radius, and a few small quality 
@@ -91,6 +140,31 @@
 									</div>
 									<span class="imagesquare"><img src="images/Wing_In_Maunal_Mill.jpg" alt="" /></span>
 								</div>
+
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>Testing</b></h2>
+										</header>
+										<p>
+											The test consited of place six increasing loads (65, 90, 115, 140, 165, and 180 in lbs) on the end of the beam. To pass the test the beam 
+											must hold 90lbs without fracture or plastic deformation. Our final beam weighted in at 1 lb, 3.9 oz and under the 90lb load had a deflection 
+											of 3.25" and once remvoed returned to its orginal shape. As the laod increased the beam began to plastically deform, ultimately fracturing at 
+											180lbs. Ultimately, the beam deflection was relatively consistent with what the simulations predicted, with bending being distributed along 
+											the length of the beam. The beam fractured near the fixed support, which is consistent with the fact that the moment at the fixed support 
+											is largest and thus produces the highest normal stresses. Since aluminum is a ductile material, it first began to neck and finally fractured 
+											in the direction of the highest shear stresses, which arise from normal stresses when the coordinate system is rotated by 45 degrees. Tensile 
+											stresses reached a yield criterion first, as the beam did not buckle significantly.
+										</p>
+										<span class="imagesquare"><img src="images/Beam_Test_Apparatus.png" alt="" /></span>
+										<span class="imagesquare"><img src="images/Broken_Beam.png" alt="" /></span>
+										<p>
+											Photo Descriptions: The photo of the left shows the beam in the testing apparatus and subjected to the 90lb load. The photo on the right shows the 
+											break caused by the 180lb load.
+										</p>
+									</div>
+								</div>
+
 							</section>
 
 				    </div>
