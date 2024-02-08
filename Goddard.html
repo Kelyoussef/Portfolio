@@ -82,26 +82,27 @@
 										</div>
 									</div>
 								</div>
-								<div>
-									<div class="spotlight">
-										<div class="content">
-											<header class="major">
-												<h2><b>My Role</b></h2>
-											</header>
-											<p>
-												My roles this year, just as the last two projects, were the avionics lead and 
-												lead engineer of the project, however, given the size of the project my responsibilities
-												as the Lead Engineer grew dramatically compared to previous years.
-												Instead of placing a big focus on solely avionics I spread it over every component and 
-                                                designed parts pertaining to every sections of the rocket. In addition, I was also in 
-                                                charge of finding, communicating with, and updating sponsors, setting up info-sessions for CAD, CNC, and other softwares, 
-												understanding the CNC lathes and mills need to make our parts managing a 5-figure budget (10,000 dollar), and 
-                                                filling out the required paperwork for the team, school, System's Go, and making sure 
-												everyone on the team has filled out the personal documents allowing us to launch on White Sands Military Base.
-												In the following sections I have detailed some of the major component which I designed. 
-											</p>
-										</div>
+								
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>My Role</b></h2>
+										</header>
+										<p>
+											My roles this year, just as the last two projects, were the avionics lead and 
+											lead engineer of the project, however, given the size of the project my responsibilities
+											as the Lead Engineer grew dramatically compared to previous years.
+											Instead of placing a big focus on solely avionics I spread it over every component and 
+                                            designed parts pertaining to every sections of the rocket. In addition, I was also in 
+                                            charge of finding, communicating with, and updating sponsors, setting up info-sessions for CAD, CNC, and other softwares, 
+											understanding the CNC lathes and mills need to make our parts managing a 5-figure budget (10,000 dollar), and 
+                                            filling out the required paperwork for the team, school, System's Go, and making sure 
+											everyone on the team has filled out the personal documents allowing us to launch on White Sands Military Base.
+											In the following sections I have detailed some of the major component which I designed. 
+										</p>
+									</div>
 								</div>
+
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
@@ -112,19 +113,30 @@
 											requirement is to build our own hybrid engine there was a larger depth to this math model. I have
 											included a link to view an earlier stage math model for the project below, the final model is having 
 											trouble opening which I will attach as soon as I figure out the issue. Below are some key variable 
-											parameters and assumptions that were made in the model.
+											parameters and assumptions that were made in the model (some might not be in the model linked below due 
+											to the issue mentioned above)
 										</p>
 										<p>
 											<li>
-												Thrust Data: As this year My team and I built our own hybrid engine we had many ways to incorporate 
-												thrust into our models. The first and easiest was constant thrust and impulse which I used for debugging
-												and had a switch to turn on and off. For the second Hybrid engines follow a similar thrust curve so I used
-												a normalized thrust curve from the Aspire Space Newland’s Book and adjusted it to match our rocket's parameters.
+												Thrust Data: As this year My team and I built our own hybrid engine to which we had a few ways of incorporating its 
+												thrust into our models. In my model I had two different methods, the first and easiest was constant thrust and impulse, 
+												both roughly estimated from rocket parameters and years of previous data, which I used for mainly for debugging and 
+												when a high level of detail was not needed. For the second all hybrid engines follow a similar thrust curve so I used 
+												a normalized thrust curve from the Aspire Space Newland's Book and scaled it to match our rocket's parameters.  
 											</li>
-											<!-- <li>
-												Ox Tank: Included in the model is an Ox Tank size and stress calculator to tell me the volume of oxidizer needed,
-												the length of the tank base on the tube diameter, and the stress and safety factor given the material. 
-											</li> -->
+											<li>
+												Ox Tank: Included in the model is an Ox Tank size and stress calculator which is based on material/nitrous properties to 
+												calculate the needed length, thickness, and volume of the tank to withstand 1.5 times the maximum operating pressure (1200 psi).
+											</li>
+											<li>
+												Nozzle: Using CEA data, fundamental constants, intial conditions, and a bell nozzle design I built a calculator used to figure out 
+												the needed characteristics for the design such as the throat/exit diameter, lengths of the convergent/divergent angles, and the 
+												exit velocity.
+											</li>
+											<li>
+												Injector: To ensure an operable mass flow rate is achieved the team built calculators which based on the tank pressure, number of 
+												injectors, oriface size, and constants to ensure the constant combustion is acheived.
+											</li>
 										</p>
 										<ul class="action">
 											<a href="https://github.com/Kelyoussef/Goddard-Math-Model" 
@@ -132,18 +144,49 @@
 										</ul>
 									</div>
 								</div>
+
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
 											<h2><b>Avionics</b></h2>
 										</header>
+										<p>
+											Design Parameters: 
+											<li>
+												Launch data, such as velocity, acceleration, alitude, and GPS coordinates must be recorded in the hardware and sent back wirelessly. 
+											</li>
+											<li>
+												The electronics bay must have complete redunacy, meaning no system depended on another and every function can be completed in at least 2 ways. 
+												This parameter was based on trying to avoid GPS/Altimeter malfunctions which previous years ran into fairly often.
+											</li>
+											<li>
+												The center of the bay must open for an all-thread to pass through. The purpose of the all thread was to redirect the opening force of the 
+												parachute into the ox tank instead of the forebody and electronics bay.
+											</li>
+											<li>
+												To ensure maximum transmit range the bay must be made of all radio-transparent materials (excluding all-threads) and have enough room to make sure no onboard 
+												antennas will couple each other. This parameter was based on the projection that after parachute ejection the rocket will drift roughly a mile away from the 
+												launch site where our on-ground antennas were set up.
+											</li>
+										</p>
+										<p>
+											These parameters culminated in the dicision to have a triangular bay with each side having its own system (system meaning the choosen hardware 
+											and needed battery), buying a fiberglass tube to be used as the body, the mounting plates made of ABS sheets and connected with 3D printed supports, 
+											and a final length of about 10".
+										</p>
+										<span class="imagesquare"><img src="images/Full_CAD_EBay.png" alt="" /></span>
+										<span class="imagesquare"><img src="images/CS_CAD_EBay.png" alt="" /></span>
+										<p>
+											The three systems included a Telemetrum, an altimeter capable of transmitting/storing a mutlitude of data and GPS coordinates, a Stratologger CF, 
+											another altimeter capable of storing similar data to the Telemtrum, and a GPS, capable of transmitting live alitude and coordinate values to a 
+											handheld device. The photos below show all the components used in the assembly of the bay (the right photo) and the state of the components after 
+											launch.
+										</p>
 										<span class="imagesquare"><img src="images/All_EBay_Component.jpg" alt="" /></span>
 										<span class="imagesquare"><img src="images/Broken_Ebay.jpg" alt="" /></span>
-										<p>
-											_____
-										</p>
 									</div>
 								</div>
+
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
@@ -151,13 +194,93 @@
 										</header>
 										<p>
 											Early in the year I began learning how to CAD and CNC in Solidworks as our sponsor's (Da Vinci Maker Labs)
-											machines take the GCode directly from Solidworks software. While I did help in the CAD my main job was understanding
-											how to set up and operate the CNC lathe and mill. 
+											machines take the GCode directly from Solidworks software. My primary role here was the generate the CNC code 
+											needed for every operation and set up/operate the CNC lathe and mill. Here I learned how to CAD with manufacturing 
+											in mind, use solidworks to generate GCode, set coordinate axies, tool offsets, and how to correctly operate CNC machines 
+											over a range of materials and speeds with a tolerance of 土.005". 
+											<br></br>
+											Components Made with CNC: Aluminum Upper and Lower Ox Tank Heads, Graphite Nozzle, Steel Coupler Ring.
 										</p>
 										<span class="imagesquare"><img src="images/ForeBody_Tank_Head.jpg" alt="" /></span>
 										<span class="imagesquare"><img src="images/Nozzle.jpg" alt="" /></span>
+										<p>
+											Photo Descriptions: The left photo shows completed outside face of the upper ox tank head inside the machine in a position ready 
+											for the boring operation to create a spherical head so better distribute the pressure inside the tank. The right photo shows the 
+											fully completed graphite nozzle with o-ring grooves and bell geometry visible. 
+										</p>
 									</div>
 								</div>
+
+								<section id="Fuel Grain">
+									<div class="spotlight">
+										<div class="content">
+											<header class="major">
+												<h2><b>Fuel Grain Testing</b></h2>
+											</header>
+											<p>
+												As stated before a major component of this project was the research and construction of a hybrid engine designed completed by 
+												the team. Along with my models another area in which I helped was in the testing of different fuel types and design/making a 
+												test stand capable of measuring thrust using load cells. 
+											</p>
+										</div>
+									</div>
+									<div class="spotlight">
+										<div class="content">
+											<p>
+												Before making the full sized fuel grain we test a range of materials, including HTPB, parasol, and ABS. The video and picture below
+												show a test conducted with ABS and the resulting regression made from a cylindrical port. ABS was also ultimately choosen as the material 
+												to use in the final rocket. ABS was choosen due reliably combustion with nitrous and its ability to be 3D printed allowing us to easily 
+												use a complex port geometry. The final fuel grain weighted roughly 22lbs, 31" long, and was printed in five sections each taking about 
+												20 hours of print time. 
+											</p>
+										</div>
+									</div>
+									<div class="spotlight">
+										<div class="content">
+											<video class="custom-video" controls>
+												<source src="images/Test_Fire.mp4" type="video/mp4">
+											</video>
+											<span class="imagesquare"><img src="images/Burnt_Fuel_Grain.jpg" alt="" /></span>
+										</div>	
+									</div>
+									<div class="spotlight">
+										<div class="content">
+											<p>
+												While the testing fuel grains provides very valuable visual, fuel regression, and nitrous flow rate data the years of rockets 
+												before us have never measured thrust data. To solve this issue I contacted an expert in load cells at manufacturing company in my 
+												area to give advice and help me build a working model. The set up is seen in the photo to the right, where the top cylinder is where 
+												the fuel is housed with the flame cone leaving from the top, the box is used to hold the cylinder, and then there is the scale under 
+												everything which measures the thrust created from the fuel. The scale uses a load cell to measure the thrust by converting changes in 
+												resistance due to the deformation of the internal cicuit to a force in Newtons. This data is then sent through the wires to a screen not 
+												shown in the photo that displays the values during the test and saves them to a excel spreadsheet.
+											</p>
+										</div>
+										<span class="imagesquare"><img src="images/Set_Up_Test_Stand.jpg" alt="" /></span>
+									</div>
+								</section>
+
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2><b>World Record</b></h2>
+										</header>
+										<p>
+											While the main and offical goal of the Goddard Rocketry Project is to launch a rocket with a self-made engine and payload to an alitude of 50,000 feet, 
+											completing them also results in another acomplishment, the world record for the highest altitude reached by highschool student lead researched and designed 
+											rocket. The preivous record was about 35,000 feet and stood for 15 years before my team and I came and reached a final alitude of 49,523 feet ASL. This record 
+											has since been confirmed by the military, circulated through news channels/other online videos, and referenced in offical Texas government legislative resolutions.
+										</p>
+										<ul class="action">
+											<a href="https://www.khou.com/amp/article/news/local/texas-high-school-rocket-world-record/285-f5f45aac-5e98-4395-9f8d-be1fa3ca07b1" 
+												class="button">KHOU11 News Article</a>
+										</ul>
+										<ul class="action">
+											<a href="https://capitol.texas.gov/tlodocs/88R/billtext/html/HC00057I.htm" 
+												class="button">Legislative Article</a>
+										</ul>
+									</div>
+								</div>
+
 							</section>
 
                     </div>

@@ -4179,3 +4179,16 @@ input, select, textarea {
 		padding: 15px;
 		text-align: center;
 	  }
+
+/* Videos */
+
+	.custom-video {
+		width: 475px;
+		height: 320px;
+		margin: 0 1em;
+	}
+	
+	.custom-video video {
+		width: 100%;
+		height: 100%;
+	}
